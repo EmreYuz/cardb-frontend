@@ -1,0 +1,22 @@
+<br>
+<div *ngIf="dataLoaded==false"  class="spinner-border text-success" role="status">
+  <span class="visually-hidden"></span>
+</div>
+<table  *ngIf="dataLoaded==true" class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Rental_CustomerId</th>
+        <th>Rental_CarId</th>
+        <th>Rental_RentalId</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rental of rentals">
+        <td>{{rental.customerId}}</td>
+        <td>{{rental.carId}}</td>
+        <td>{{rental.rentalId}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
