@@ -1,4 +1,4 @@
-<br>
+<!-- <br>
 <div *ngIf="dataLoaded==false"  class="spinner-border text-success" role="status">
   <span class="visually-hidden"></span>
 </div>
@@ -13,6 +13,16 @@
         <td>{{color.colorName}}</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 
+  <ul class="list group">
+    <thead>
+      <tr>
+        <th scope="col">Renk</th>
+        <th></th>
+      </tr>
+    </thead>
+    <li (click)="setCurrentColor(color)" *ngFor="let color of colors" [class]= "getCurrentColorClass(color)">{{color.colorName}}</li>
+  </ul>
 
+  <h5 *ngIf="currentColor" >{{currentColor.colorName}} seçtiniz</h5>

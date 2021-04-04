@@ -1,4 +1,4 @@
-import { ResponseModel } from '../reponseModel';
+import { ResponseModel } from './reponseModel';
 
 export interface ListResponseModel<T> extends ResponseModel {
   data: T[];
