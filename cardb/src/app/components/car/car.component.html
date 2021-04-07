@@ -1,7 +1,23 @@
 <br>
-<div *ngIf="dataLoaded==false"  class="spinner-border text-success" role="status">
+<div *ngIf="dataLoaded==false"  class="spinner-border text-primary" role="status">
   <span class="visually-hidden"></span>
 </div>
+
+<!-- <select class="form-select" aria-label="Disabled select example" disabled>
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select> -->
+
+<div class="mb-3">
+  <label for="filterText" class="form-label">Araç ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arama ifadesi giriniz">
+</div>
+<div *ngIf="filterText" class="alert alert-primary">
+  {{filterText}} aradınız.
+</div>
+
 <table  *ngIf="dataLoaded==true" class="table table-hover">
     <thead>
       <tr>
@@ -11,6 +27,7 @@
         <th>Yıl</th>
         <th>Açıklama</th>
         <th>Günlük Fiyat</th>
+        <th>KDV Dahil Fiyat</th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +37,8 @@
         <td>{{car.colorName}}</td>
         <td>{{car.modelYear}}</td>
         <td>{{car.description}}</td>
-        <td>{{car.dailyPrice}}</td>
+        <td>{{car.dailyPrice}} TL</td>
+        <td>{{car.dailyPrice | vatAdded:18 }} TL</td>
       </tr>
     </tbody>
   </table>
