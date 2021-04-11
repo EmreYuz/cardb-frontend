@@ -12,7 +12,8 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
-import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { BrandFilterPipePipe } from './pipes/brand-filter-pipe.pipe';
+import { ColorFilterPipePipe } from './pipes/color-filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     CarComponent,
     RentalComponent,
     VatAddedPipe,
-    FilterPipePipe,
+    BrandFilterPipePipe,
+    ColorFilterPipePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
